@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-premium-bg: #000000;
+  --color-premium-surface: #111111;
+  --color-premium-card: #0a0a0a;
+  --color-premium-accent: #ffffff;
+  --color-premium-danger: #333333;
+  --color-premium-success: #ffffff;
+  --color-premium-warning: #888888;
+
+  --font-montserrat: "Montserrat", sans-serif;
+
+  --animate-pulse-ring: pulse-ring 2s infinite;
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.85);
+      opacity: 0.5;
+    }
+
+    50% {
+      transform: scale(1.05);
+      opacity: 0.2;
+    }
+
+    100% {
+      transform: scale(0.85);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes flash-rtl {
+    0% {
+      left: 150%;
+    }
+
+    100% {
+      left: -150%;
+    }
+  }
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-montserrat);
+  }
+
+  body {
+    @apply bg-premium-bg text-white min-h-screen antialiased;
+  }
+}
+
+@layer components {
+  .glass-premium {
+    @apply bg-premium-surface/80 backdrop-blur-2xl border border-white/10;
+  }
+
+  .btn-premium-primary {
+    @apply px-6 py-3 rounded-xl font-bold bg-premium-accent text-black hover:bg-premium-accent/90 transition-all duration-300 active:scale-95 shadow-lg shadow-white/20 border-none cursor-pointer;
+  }
+
+  .btn-premium-danger {
+    @apply px-4 py-2 rounded-xl font-bold bg-premium-danger text-white hover:bg-premium-danger/90 transition-all duration-300 active:scale-95 border-none cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .animate-flash-rtl {
+     animation: flash-rtl 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+   }
+ 
+   .safe-bottom {
+     padding-bottom: env(safe-area-inset-bottom, 12px);
+   }
+
+  /* SFU Video Fit Utilities */
+  .object-contain video {
+    object-fit: contain !important;
+  }
+
+  .object-cover video {
+    object-fit: cover !important;
+  }
+
+}
