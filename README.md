@@ -2,7 +2,6 @@
 
 ## 1. Executive Summary
 SmartMeet24 is a high-performance, scalable, and secure real-time communication platform designed for modern enterprise environments. Built on a Selective Forwarding Unit (SFU) architecture using Mediasoup, the platform provides low-latency multi-party video conferencing, collaborative tools, and AI-driven post-meeting analytics. The system follows a microservices-oriented approach with a decoupled architecture between the real-time signaling layer, the media transport layer, and the application business logic.
-
 ## 2. Technical Philosophy
 The primary objective of SmartMeet24 is to overcome the limitations of traditional Peer-to-Peer (P2P) Mesh and Multipoint Control Unit (MCU) architectures. By leveraging an SFU-based model, the platform balances network efficiency with server-side processing, ensuring that high-definition video and audio streams remain stable even in large-scale meeting environments.
 
