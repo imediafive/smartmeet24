@@ -10,7 +10,6 @@ async function checkServer() {
             username: 'root',
             password: 'YOUR_SERVER_PASSWORD'
         });
-
         console.log('Connected to server!');
 
         const commands = [
